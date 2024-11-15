@@ -46,7 +46,7 @@ function UpdateCar() {
 
         try {
             await axios.put(
-                `https://car-nexus-liart.vercel.app/api/cars/update?carId=${carId}`,
+                `http://3.95.31.44:8080/api/cars/update?carId=${carId}`,
                 formData, // sending FormData for file upload
                 {
                     headers: {

@@ -44,7 +44,7 @@ export default function CreateProduct() {
 
         try {
             await axios.post(
-                "http://3.95.31.44:8080/api/cars/create",
+                "https://carnexus-api.onrender.com/api/cars/create",
                 formData, // sending FormData for file upload
                 {
                     headers: {

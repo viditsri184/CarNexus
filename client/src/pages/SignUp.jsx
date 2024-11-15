@@ -19,7 +19,7 @@ export default function SignUp() {
 
     const handleSignUp = async () => {
         try {
-            const response = await axios.post("https://car-nexus-liart.vercel.app/api/auth/signup", {
+            const response = await axios.post("http://3.95.31.44:8080/api/auth/signup", {
                 username, firstName, lastName, password
             });
             localStorage.setItem("token", "Bearer " + response.data.token);

@@ -44,7 +44,7 @@ export default function CreateProduct() {
 
         try {
             await axios.post(
-                "https://car-nexus-liart.vercel.app/api/cars/create",
+                "http://3.95.31.44:8080/api/cars/create",
                 formData, // sending FormData for file upload
                 {
                     headers: {

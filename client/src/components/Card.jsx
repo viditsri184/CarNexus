@@ -25,7 +25,7 @@ function Card({ car, onDelete }) {
         setIsDeleting(true); // Set deleting state to true
 
         try {
-            await axios.delete(`http://localhost:8080/api/cars/remove?carId=${car._id}`, {
+            await axios.delete(`https://car-nexus-liart.vercel.app/api/cars/remove?carId=${car._id}`, {
                 headers: {
                     Authorization: token, // Send the token in the Authorization header
                 },

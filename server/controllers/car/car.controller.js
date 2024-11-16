@@ -140,12 +140,6 @@ class CarController {
         for (const file of req.files) {
             const result = await cloudinary.uploader.upload(file.path);
             images.push(result.secure_url); // Add the Cloudinary URL to the images array
-
-            // Optionally, delete the uploaded file from local storage
-            fs.unlink(file.path, (err) => {
-                if (err) console.log(err);
-                else console.log("\nDeleted file");
-            });
         }
         // }
 

@@ -3,7 +3,7 @@ import { Suspense } from 'react'
 import React from 'react';
 import Loader from './components/Loader';
 const Login = React.lazy(() => import("./pages/Login"));
-const SignUp = React.lazy(() => import("./pages/Signup"));
+const SignUp = React.lazy(() => import("./pages/SignUp"));
 const Dashboard = React.lazy(() => import("./pages/Dashboard"));
 const CreateProduct = React.lazy(() => import("./pages/CreateProduct"));
 const Landing = React.lazy(() => import("./pages/Landing"));

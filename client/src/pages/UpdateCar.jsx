@@ -46,7 +46,7 @@ function UpdateCar() {
 
         try {
             await axios.put(
-                `https://carnexus-api.onrender.com/api/cars/update?carId=${carId}`,
+                `http://localhost:8080/api/cars/update?carId=${carId}`,
                 formData, // sending FormData for file upload
                 {
                     headers: {

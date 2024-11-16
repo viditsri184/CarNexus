@@ -1,6 +1,7 @@
 import axios from 'axios'
 import { useState } from "react"
 import { useNavigate } from "react-router-dom"
+import { BottomWarning } from '../components/BottomWarning'
 import { Button } from "../components/Button"
 import Footer from "../components/Footer"
 import { Heading } from "../components/Heading"
@@ -8,7 +9,6 @@ import ImageUpload from "../components/ImageUpload"
 import { InputBox } from "../components/InputBox"
 import Navbar from "../components/Navbar"
 import { SubHeading } from "../components/SubHeading"
-import { BottomWarning } from '../components/BottomWarning'
 
 export default function CreateProduct() {
     const [showSuccess, setShowSuccess] = useState(false);
@@ -42,9 +42,13 @@ export default function CreateProduct() {
             formData.append("images", image);
         });
 
+        // for (const [key, value] of formData.entries()) {
+        //     console.log(`${key}:`, value);
+        // }
+
         try {
             await axios.post(
-                "https://carnexus-api.onrender.com/api/cars/create",
+                "http://localhost:8080/api/cars/create",
                 formData, // sending FormData for file upload
                 {
                     headers: {

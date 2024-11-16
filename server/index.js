@@ -22,6 +22,7 @@ const swaggerOptions = {
 const swaggerDocs = swaggerJsdoc(swaggerOptions);
 app.use('/api/docs', swaggerUi.serve, swaggerUi.setup(swaggerDocs));
 
+app.use(express.urlencoded({ extended: true }));
 app.use(express.json());
 app.use(cors({
     origin: 'http://localhost:5173', // Your frontend URL

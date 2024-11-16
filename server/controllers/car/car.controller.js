@@ -7,43 +7,65 @@ const fs = require('fs');
 class CarController {
     // Create a product (new car)
     createCar = asyncHandler(async (req, res) => {
+        console.log("Request body:", req.body);
+
         const { title, description } = req.body;
         let tags = req.body.tags;
+
         if (typeof tags === 'string') {
             try {
                 tags = JSON.parse(tags);
             } catch (error) {
+                console.error("Invalid tags format:", error);
                 return res.status(411).json({ msg: "Invalid tags format" });
             }
         }
+
         const userPayload = { title, description, tags };
-        const { success } = createCarBody.safeParse(userPayload);
-        if (!success) {
-            return res.status(401).json({ msg: "Invalid inputs" });
+
+        const validationResult = createCarBody.safeParse(userPayload);
+        if (!validationResult.success) {
+            console.error("Validation errors:", validationResult.error.errors);
+            return res.status(401).json({ msg: "Invalid inputs", errors: validationResult.error.errors });
         }
+
+        if (!req.files || req.files.length === 0) {
+            return res.status(400).json({ msg: "At least one image is required" });
+        }
+
         const images = [];
         for (const file of req.files) {
-            const result = await cloudinary.uploader.upload(file.path);
-            images.push(result.secure_url); // Add the Cloudinary URL to the images array
+            try {
+                const result = await cloudinary.uploader.upload(file.path);
+                images.push(result.secure_url);
 
-            fs.unlink((file.path), (err) => {
-                if (err) console.log(err);
-                else console.log("\nDeleted file");
-            })
+                fs.unlink(file.path, (err) => {
+                    if (err) console.error("File deletion error:", err);
+                    else console.log("Deleted file");
+                });
+            } catch (error) {
+                console.error("Cloudinary upload error:", error);
+                return res.status(500).json({ msg: "Image upload failed" });
+            }
         }
 
         const userId = req.userId;
 
-        const car = new Car({
-            userId,
-            title,
-            description,
-            tags,
-            images
-        });
+        try {
+            const car = new Car({
+                userId,
+                title,
+                description,
+                tags,
+                images
+            });
 
-        await car.save();
-        return res.status(201).json({ message: "Car created successfully", car });
+            await car.save();
+            return res.status(201).json({ message: "Car created successfully", car });
+        } catch (error) {
+            console.error("Database save error:", error);
+            return res.status(500).json({ msg: "Error saving car to the database" });
+        }
     });
 
     // get all cars of a user
@@ -120,16 +142,16 @@ class CarController {
         // Handle image uploads and add the URLs to an array
         const images = [];
         // if(req.files && Array.isArray(req.files)){
-            for (const file of req.files) {
-                const result = await cloudinary.uploader.upload(file.path);
-                images.push(result.secure_url); // Add the Cloudinary URL to the images array
-    
-                // Optionally, delete the uploaded file from local storage
-                fs.unlink(file.path, (err) => {
-                    if (err) console.log(err);
-                    else console.log("\nDeleted file");
-                });
-            }
+        for (const file of req.files) {
+            const result = await cloudinary.uploader.upload(file.path);
+            images.push(result.secure_url); // Add the Cloudinary URL to the images array
+
+            // Optionally, delete the uploaded file from local storage
+            fs.unlink(file.path, (err) => {
+                if (err) console.log(err);
+                else console.log("\nDeleted file");
+            });
+        }
         // }
 
         // Find and update the car record

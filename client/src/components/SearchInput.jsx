@@ -20,7 +20,7 @@ function SearchInput({ setCars }) {
         if (!searchQuery.trim()) {
             // If query is empty, show all cars
             const token = localStorage.getItem("token");
-            const response = await axios.get('https://carnexus-api.onrender.com/api/cars/show', {
+            const response = await axios.get('http://localhost:8080/api/cars/show', {
                 headers: { Authorization: token },
             });
             setCars(response.data); // Update with all cars
@@ -29,7 +29,7 @@ function SearchInput({ setCars }) {
 
         try {
             const token = localStorage.getItem("token");
-            const response = await axios.get(`https://carnexus-api.onrender.com/api/cars/search?query=${debouncedQuery}`, {
+            const response = await axios.get(`http://localhost:8080/api/cars/search?query=${debouncedQuery}`, {
                 headers: { Authorization: token },
             });
 

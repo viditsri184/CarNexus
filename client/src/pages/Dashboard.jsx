@@ -15,7 +15,7 @@ function Dashboard() {
         const fetchCars = async () => {
             try {
                 const token = localStorage.getItem("token");
-                const response = await axios.get('https://carnexus-api.onrender.com/api/cars/show', {
+                const response = await axios.get('http://localhost:8080/api/cars/show', {
                     headers: {
                         Authorization: token,
                     }

@@ -31,53 +31,53 @@ function Landing() {
                         <h2 className='mb-6 text-3xl font-extrabold leading-tight tracking-tight text-gray-900 lg:text-center dark:text-white md:text-4xl'>Demo of the Cards</h2>
                         <p className='mb-10 text-lg font-normal text-gray-500 dark:text-gray-400 lg:text-center lg:text-xl lg:px-64 lg:mb-16'>Get started, and build your own car cards</p>
                         <div className='space-y-4 sm:grid sm:grid-cols-2 lg:grid-cols-3 sm:gap-4 xl:gap-8 sm:space-y-0 md:mt-12'>
-                            <div class="max-w-sm bg-white border border-gray-200 rounded-lg shadow dark:bg-gray-800 dark:border-gray-700">
+                            <div className="max-w-sm bg-white border border-gray-200 rounded-lg shadow dark:bg-gray-800 dark:border-gray-700">
                                 <a href="/">
-                                    <img class="rounded-t-lg" src="img1.jpg" alt="" />
+                                    <img className="rounded-t-lg" src="img1.jpg" alt="" />
                                 </a>
-                                <div class="p-5">
+                                <div className="p-5">
                                     <a href="/">
-                                        <h5 class="mb-2 text-2xl font-bold tracking-tight text-gray-900 dark:text-white">Mercedes-benz</h5>
+                                        <h5 className="mb-2 text-2xl font-bold tracking-tight text-gray-900 dark:text-white">Mercedes-benz</h5>
                                     </a>
-                                    <p class="mb-3 font-normal text-gray-700 dark:text-gray-400">Explore the latest models from Mercedes-Benz, showcasing luxury, performance, and cutting-edge technology.</p>
-                                    <a href="https://www.mercedes-benz.co.in/" target='_blank' class="inline-flex items-center px-3 py-2 text-sm font-medium text-center text-white bg-black  rounded-lg hover:bg-gray-800 focus:ring-4 focus:outline-none focus:ring-blue-300 dark:bg-white dark:text-black">
+                                    <p className="mb-3 font-normal text-gray-700 dark:text-gray-400">Explore the latest models from Mercedes-Benz, showcasing luxury, performance, and cutting-edge technology.</p>
+                                    <a href="https://www.mercedes-benz.co.in/" target='_blank' className="inline-flex items-center px-3 py-2 text-sm font-medium text-center text-white bg-black  rounded-lg hover:bg-gray-800 focus:ring-4 focus:outline-none focus:ring-blue-300 dark:bg-white dark:text-black">
                                         Visit
-                                        <svg class="rtl:rotate-180 w-3.5 h-3.5 ms-2" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 14 10">
-                                            <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M1 5h12m0 0L9 1m4 4L9 9" />
+                                        <svg className="rtl:rotate-180 w-3.5 h-3.5 ms-2" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 14 10">
+                                            <path stroke="currentColor" strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M1 5h12m0 0L9 1m4 4L9 9" />
                                         </svg>
                                     </a>
                                 </div>
                             </div>
-                            <div class="max-w-sm bg-white border border-gray-200 rounded-lg shadow dark:bg-gray-800 dark:border-gray-700">
+                            <div className="max-w-sm bg-white border border-gray-200 rounded-lg shadow dark:bg-gray-800 dark:border-gray-700">
                                 <a href="/">
-                                    <img class="rounded-t-lg" src="img2.jpg" alt="" />
+                                    <img className="rounded-t-lg" src="img2.jpg" alt="" />
                                 </a>
-                                <div class="p-5">
+                                <div className="p-5">
                                     <a href="/">
-                                        <h5 class="mb-2 text-2xl font-bold tracking-tight text-gray-900 dark:text-white">BMW</h5>
+                                        <h5 className="mb-2 text-2xl font-bold tracking-tight text-gray-900 dark:text-white">BMW</h5>
                                     </a>
-                                    <p class="mb-3 font-normal text-gray-700 dark:text-gray-400">Discover the luxury and engineering excellence of BMW, where innovation meets elegance in every model.</p>
-                                    <a href="https://www.bmw.com/en/index.html" target='_blank' class="inline-flex items-center px-3 py-2 text-sm font-medium text-center text-white bg-black  rounded-lg hover:bg-gray-800 focus:ring-4 focus:outline-none focus:ring-blue-300 dark:bg-white dark:text-black">
+                                    <p className="mb-3 font-normal text-gray-700 dark:text-gray-400">Discover the luxury and engineering excellence of BMW, where innovation meets elegance in every model.</p>
+                                    <a href="https://www.bmw.com/en/index.html" target='_blank' className="inline-flex items-center px-3 py-2 text-sm font-medium text-center text-white bg-black  rounded-lg hover:bg-gray-800 focus:ring-4 focus:outline-none focus:ring-blue-300 dark:bg-white dark:text-black">
                                         Visit
-                                        <svg class="rtl:rotate-180 w-3.5 h-3.5 ms-2" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 14 10">
-                                            <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M1 5h12m0 0L9 1m4 4L9 9" />
+                                        <svg className="rtl:rotate-180 w-3.5 h-3.5 ms-2" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 14 10">
+                                            <path stroke="currentColor" strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M1 5h12m0 0L9 1m4 4L9 9" />
                                         </svg>
                                     </a>
                                 </div>
                             </div>
-                            <div class="max-w-sm bg-white border border-gray-200 rounded-lg shadow dark:bg-gray-800 dark:border-gray-700">
+                            <div className="max-w-sm bg-white border border-gray-200 rounded-lg shadow dark:bg-gray-800 dark:border-gray-700">
                                 <a href="/">
-                                    <img class="rounded-t-lg" src="img3.jpg" alt="" />
+                                    <img className="rounded-t-lg" src="img3.jpg" alt="" />
                                 </a>
-                                <div class="p-5">
+                                <div className="p-5">
                                     <a href="/">
-                                        <h5 class="mb-2 text-2xl font-bold tracking-tight text-gray-900 dark:text-white">Aston Martin</h5>
+                                        <h5 className="mb-2 text-2xl font-bold tracking-tight text-gray-900 dark:text-white">Aston Martin</h5>
                                     </a>
-                                    <p class="mb-3 font-normal text-gray-700 dark:text-gray-400">Aston Martin combines performance and sophistication, making every vehicle a masterpiece on the road.</p>
-                                    <a href="https://www.astonmartin.com/en" target='_blank' class="inline-flex items-center px-3 py-2 text-sm font-medium text-center text-white bg-black  rounded-lg hover:bg-gray-800 focus:ring-4 focus:outline-none focus:ring-blue-300 dark:bg-white dark:text-black">
+                                    <p className="mb-3 font-normal text-gray-700 dark:text-gray-400">Aston Martin combines performance and sophistication, making every vehicle a masterpiece on the road.</p>
+                                    <a href="https://www.astonmartin.com/en" target='_blank' className="inline-flex items-center px-3 py-2 text-sm font-medium text-center text-white bg-black  rounded-lg hover:bg-gray-800 focus:ring-4 focus:outline-none focus:ring-blue-300 dark:bg-white dark:text-black">
                                         Visit
-                                        <svg class="rtl:rotate-180 w-3.5 h-3.5 ms-2" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 14 10">
-                                            <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M1 5h12m0 0L9 1m4 4L9 9" />
+                                        <svg className="rtl:rotate-180 w-3.5 h-3.5 ms-2" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 14 10">
+                                            <path stroke="currentColor" strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M1 5h12m0 0L9 1m4 4L9 9" />
                                         </svg>
                                     </a>
                                 </div>

@@ -25,11 +25,16 @@ app.use('/api/docs', swaggerUi.serve, swaggerUi.setup(swaggerDocs));
 app.use(express.urlencoded({ extended: true }));
 app.use(express.json());
 app.use(cors({
-    origin: 'http://localhost:5173', // Your frontend URL
+    origin: true, // Your frontend URL
     methods: ['GET', 'POST', 'PUT', 'DELETE'],
     allowedHeaders: ['Content-Type', 'Authorization'],
 }));
 app.use('/api', router);
+app.use((err, req, res, next) => {
+    console.error(err.stack);
+    res.status(500).json({ error: 'Internal Server Error' });
+});
+
 
 const port = process.env.PORT || 8080;
 const start = () => {

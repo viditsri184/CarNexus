@@ -38,11 +38,6 @@ class CarController {
             try {
                 const result = await cloudinary.uploader.upload(file.path);
                 images.push(result.secure_url);
-
-                fs.unlink(file.path, (err) => {
-                    if (err) console.error("File deletion error:", err);
-                    else console.log("Deleted file");
-                });
             } catch (error) {
                 console.error("Cloudinary upload error:", error);
                 return res.status(500).json({ msg: "Image upload failed" });

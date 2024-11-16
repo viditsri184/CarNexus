@@ -15,7 +15,7 @@ function Dashboard() {
         const fetchCars = async () => {
             try {
                 const token = localStorage.getItem("token");
-                const response = await axios.get('http://localhost:8080/api/cars/show', {
+                const response = await axios.get('https://car-nexus-api.vercel.app/api/cars/show', {
                     headers: {
                         Authorization: token,
                     }

@@ -1,5 +1,5 @@
-import React, { useState, useEffect } from 'react';
 import axios from 'axios';
+import { useEffect, useState } from 'react';
 
 function SearchInput({ setCars }) {
     const [searchQuery, setSearchQuery] = useState("");
@@ -20,7 +20,7 @@ function SearchInput({ setCars }) {
         if (!searchQuery.trim()) {
             // If query is empty, show all cars
             const token = localStorage.getItem("token");
-            const response = await axios.get('http://localhost:8080/api/cars/show', {
+            const response = await axios.get('https://car-nexus-api.vercel.app/api/cars/show', {
                 headers: { Authorization: token },
             });
             setCars(response.data); // Update with all cars
@@ -29,7 +29,7 @@ function SearchInput({ setCars }) {
 
         try {
             const token = localStorage.getItem("token");
-            const response = await axios.get(`http://localhost:8080/api/cars/search?query=${debouncedQuery}`, {
+            const response = await axios.get(`https://car-nexus-api.vercel.app/api/cars/search?query=${debouncedQuery}`, {
                 headers: { Authorization: token },
             });
 

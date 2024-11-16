@@ -22,7 +22,7 @@ function ProductDetail() {
                     return;
                 }
 
-                const response = await axios.get(`http://localhost:8080/api/cars/car?carId=${carId}`, {
+                const response = await axios.get(`https://car-nexus-api.vercel.app/cars/car?carId=${carId}`, {
                     headers: {
                         Authorization: token,
                     }

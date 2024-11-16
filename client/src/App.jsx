@@ -15,7 +15,7 @@ function App() {
 
   return (
     <>
-    <BrowserRouter>
+    <BrowserRouter basename='/app'>
         <Suspense fallback={<Loader />}>
         <Routes>
           <Route path='/' element={<Landing/>}/>
